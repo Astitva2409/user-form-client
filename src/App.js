@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import UserInput from "./components/UserInput";
+import SubmissionList from "./components/SubmissionList";
 
-function App() {
+const App = () => {
+  const [submission, setSubmission] = useState([]);
+  const [formState, setFormState] = useState(true);
+  const [submissionListState, setSubmissionListState] = useState(false);
+
+  const addNewSubmission = (userDetails) => {
+    setSubmission((prevSubmission) => {
+      const updatedSubmissions = [...prevSubmission];
+      updatedSubmissions.unshift({
+        text: `Name: ${userDetails.Name}, Age: ${userDetails.Age}, Email: ${userDetails.Email}, Phone:${userDetails.Contact}`,
+        id: Math.random().toString(),
+      });
+      return updatedSubmissions;
+    });
+    setFormState(false);
+    setSubmissionListState(true);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {formState && (
+        <div id="user-form">
+          <UserInput onAddSubmission={addNewSubmission} />
+        </div>
+      )}
+      {submissionListState && (
+        <div id="submissions">
+          <SubmissionList items={submission} />
+        </div>
+      )}
+    </React.Fragment>
   );
 }
 

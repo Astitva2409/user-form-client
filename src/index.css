@@ -5,9 +5,118 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(238, 236, 236);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* User-form css code */
+#user-form {
+  width: 40rem;
+  max-width: 100%;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Submission css code */
+#submissions {
+  padding: .1rem;
+  background-color: white;
+  margin: 3rem auto;
+  width: 40rem;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* UserInput css code */
+h1 {
+  text-align: center;
+}
+
+.form-control {
+  background-color: white;
+  margin: 0;
+}
+
+.form-control label {
+  font-weight: bold;
+  display: block;
+  /* margin-bottom: 0.5rem; */
+  padding: 0.5rem 0.5rem;
+}
+
+.form-control input {
+  display: block;
+  width: 95%;
+  border: 1px solid #ccc;
+  font: inherit;
+  line-height: 1.5rem;
+  padding: .5rem;
+  margin-left: 0.5rem;
+}
+
+.form-control input:focus {
+  outline: none;
+}
+
+.button {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  color: white;
+  background: #281ae6;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 1rem 0 0 0.4rem;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover,
+.button:active {
+  background: #4f45e8;
+  border-color: #4f45e8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+}
+
+.form-control span {
+  color: red;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: smaller;
+  margin-left: 0.5rem;
+}
+
+
+/* SubmissionList css code */
+.submission-list {
+  list-style: none;
+  margin: auto;
+  align-items: center;
+}
+
+/* submissionItem css code */
+.submission-item {
+  color: black;
+  background-color: white;
+  border: 1.5px solid black;
+  padding: .5rem;
+  width: 100%;
+  max-width: 90%;
+  margin-bottom: .75rem;
+  margin-top: .75rem;
+  align-items: center;
 }
